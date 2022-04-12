@@ -23,7 +23,16 @@ async function connectToDB() {
 connectToDB();
 
 app.get("/", (req, res) => {
-  res.send("<h1>This is closetheshy API</h1>");
+  res.send(
+    `<div> 
+      <h1>This is closetheshy API</h1> 
+      <h2>List of routes</h2> 
+      <ul>
+        <li><a href='/api/shelters'>Get all shelters<a/></li> 
+        <li><a href='/api/shelters/1'>Get one shelter by id (exzmple 1)<a/></li>
+      </ul> 
+    </div>`
+  );
 });
 
 app.listen(PORT, (e) => {
